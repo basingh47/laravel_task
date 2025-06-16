@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('product_id'); // same as increments but modern
+            $table->id('product_id'); 
             $table->string('product_name');
             $table->text('product_description');
             $table->timestamps();

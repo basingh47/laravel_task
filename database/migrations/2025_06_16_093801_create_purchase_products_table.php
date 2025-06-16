@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('purchase_products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id'); // must match products.product_id type
-            $table->integer('qty'); // qty should be integer, not string
+            $table->unsignedBigInteger('product_id'); 
+            $table->integer('qty'); 
             $table->date('date');
             $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
             $table->timestamps();
