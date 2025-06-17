@@ -7,4 +7,4 @@ use App\Http\Controllers\ReportPdfController;
 Route::get('/',function(){
     return view('index');
 });
-Route::get('/reportpdf',[ReportPdfController::class,'index'])->name('reportPdf');
+Route::get('/reportpdf',[ReportPdfController::class,'generatePDF'])->name('reportPdf');
