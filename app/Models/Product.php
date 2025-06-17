@@ -11,4 +11,14 @@ class Product extends Model
     protected $primaryKey = "product_id";
 
     protected $fillable = ['product_name','product_description'];
+
+    public function purchaseProducts()
+    {
+        return $this->hasMany(PurchaseProduct::class,"product_id");
+    }
+
+     public function wasteProducts()
+    {
+        return $this->hasMany(WasteProduct::class, 'product_id');
+    }
 }
