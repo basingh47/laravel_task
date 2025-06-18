@@ -14,11 +14,11 @@ class WasteProductsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
         for ($i = 0; $i < 20; $i++) {
             DB::table('waste_products')->insert([
-                'throwable_qty' => rand(1, 50),
-                'product_id' => rand(1, 6),
+                'throwable_qty' => rand(1, 5),
+                'product_id' => rand(1, 8),
                 'created_at'=>now(),
                 'updated_at'=>now(),
             ]);
