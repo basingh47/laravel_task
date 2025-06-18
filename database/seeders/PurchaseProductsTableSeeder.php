@@ -23,7 +23,7 @@ class PurchaseProductsTableSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             DB::table('purchase_products')->insert([
                 'product_id'=>rand(1, 8),
-                'qty'=>rand(1, 5),
+                'qty'=>rand(1, 100),
                 'date'=>$faker->dateTimeBetween('2025-06-01', '2025-06-30'),
                 'created_at'=>now(),
                 'updated_at'=>now(),

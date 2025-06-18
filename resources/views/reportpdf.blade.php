@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title>Laravel PDF Example</title>
+    <title>PDF </title>
     <style>
         body {
             font-family: 'Arial, sans-serif';
@@ -89,7 +89,6 @@
             font-size: 0.875rem;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('asset/css/pdf.css') }}" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -105,12 +104,10 @@
                 </td>
                 <td class="w-half12">
                     <h2> Weekely Throwable Report</h2>
-                    
                 </td>
             </tr>
         </table>
         <div class="margin-top">
-
             @foreach($usersOrders as $key => $items)
                 <table class="products">
                     <tr>

@@ -17,7 +17,7 @@ class ReportPdfController extends Controller
     public function generatePDF()
     {
         $startDate = '2025-06-01';
-        $endDate = '2025-06-07';
+        $endDate = '2025-06-14';
         $usersOrders  = DB::table('products')
         ->join('waste_products', 'products.product_id', '=', 'waste_products.product_id')
         ->join('purchase_products', 'products.product_id', '=', 'purchase_products.product_id')
@@ -25,7 +25,7 @@ class ReportPdfController extends Controller
             'products.product_name',
             'purchase_products.qty',
             'purchase_products.date',
-            DB::raw('SUM(COALESCE(waste_products.throwable_qty, 0)) as wasteqty'),
+            DB::raw('SUM(COALESCE(waste_products.throwable_qty,0)) as wasteqty'),
         )
         ->whereBetween('purchase_products.date', [$startDate, $endDate])
         ->groupBy('products.product_id', 'products.product_name', 'purchase_products.qty', 'purchase_products.date')
@@ -36,7 +36,7 @@ class ReportPdfController extends Controller
         //  dd($usersOrders->toArray());
         $pdf = PDF::loadView('reportpdf', ['usersOrders'=>$rs]);
 
-         return $pdf->stream('document.pdf');
+         return $pdf->download('Data.pdf');
         // return view('reportpdf',['usersOrders'=>$rs]);
      }
 }
