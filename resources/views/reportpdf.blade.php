@@ -108,21 +108,22 @@
             </tr>
         </table>
         <div class="margin-top">
-            @foreach($usersOrders as $key => $items)
+            @foreach($userData as $key => $items)
+                @dd($userData);
                 <table class="products">
                     <tr>
                         <th>Product_name</th>
-
-                        <th>{{ Carbon::parse($key)->format('l')}}</br>{{$key}}</th>
+                        <th>{{$key}}</th>
+                        {{-- <th>{{ Carbon::parse($key)->format('l')}}</br>{{$key}}</th> --}}
 
                     </tr>
                     <tbody>
-                        @foreach ($items as $item)
-                            <tr class="items">
-                                <td> {{ $item->product_name }} </td>
-                                <td> {{ $item->wasteqty }} </td>
-                            </tr>
-                        @endforeach
+                        {{-- @foreach ($items as $item)
+                        <tr class="items">
+                            <td> {{ $item->product_name }} </td>
+                            <td> {{ $item->wasteqty }} </td>
+                        </tr>
+                        @endforeach --}}
                     </tbody>
                 </table>
             @endforeach
