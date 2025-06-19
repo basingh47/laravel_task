@@ -108,22 +108,35 @@
             </tr>
         </table>
         <div class="margin-top">
-            @foreach($userData as $key => $items)
-                @dd($userData);
+            @foreach($data as $key => $items)
+            @foreach ($items as $item)
+            @foreach ($item as $result)
+            {{-- @dd($data); --}}
+            {{-- @dd($items); --}}
+           
                 <table class="products">
-                    <tr>
+                    {{-- <tr>
                         <th>Product_name</th>
-                        <th>{{$key}}</th>
-                        {{-- <th>{{ Carbon::parse($key)->format('l')}}</br>{{$key}}</th> --}}
+                        <th>WEEK{{$key}}</th>
+                        {{-- <td> {{ $result->date }} </td> --}}
+                        {{-- <th></th>  --}}
+                        {{-- <th>{{ Carbon::parse($result->date)->format('l')}}</br>{{$key}}</th> --}}
 
+                    {{-- </tr> --}}
+                    <tr >
+                        <th>Productname</th>
+                        <th>Date</th>
+                        <th> <td> {{ $result->date}} </td></th>
+                        {{-- <th>Throwable QTY</th> --}}
                     </tr>
                     <tbody>
-                        {{-- @foreach ($items as $item)
                         <tr class="items">
-                            <td> {{ $item->product_name }} </td>
-                            <td> {{ $item->wasteqty }} </td>
-                        </tr>
-                        @endforeach --}}
+                            <td> {{ $result->product_name }} </td>
+                         
+                            <td> {{ $result->wasteqty }} </td>
+                            </tr>
+                        @endforeach
+                        @endforeach
                     </tbody>
                 </table>
             @endforeach
